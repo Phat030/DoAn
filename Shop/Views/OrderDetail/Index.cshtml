@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Shop.Models.OrderDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>OrderDetail</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantitySale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPriceSale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.PhoneCus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.NameProduct)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantitySale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPriceSale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.PhoneCus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Products.NameProduct)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Details", "Details", new { id=item.IDOrderDetail }) |
+            
+        </td>
+    </tr>
+}
+
+</table>

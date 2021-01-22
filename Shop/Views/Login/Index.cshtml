@@ -1,0 +1,64 @@
+﻿@model Shop.Models.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutCus2.cshtml";
+}
+
+<!DOCTYPE html>
+
+
+<head>
+    
+    <title>LogIn</title>
+    
+    <!--css private-->  
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="form-login">
+        @using (Html.BeginForm("Authen", "Login", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <table>
+                <tr class="title-form">
+                    <th colspan="2">LogIn</th>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(m => m.Email)</td>
+                    <td>@Html.TextBoxFor(m => m.Email, new { style = "width:100%" })</td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ValidationMessageFor(m => m.Email)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(m => m.Password)</td>
+                    <td>@Html.PasswordFor(m => m.Password, new { style = "width:100%" })</td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ValidationMessageFor(m => m.Password)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">
+                            @Html.DisplayFor(m => m.LoginErrorMessage)
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <input class="btn btn-primary" type="submit" value="Login" />
+                        <input class="btn btn-primary" type="reset" value="Reset" />
+                        <a class="btn btn-primary" href="@Url.Action("Register","Login")">Register</a>
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+    
+
+

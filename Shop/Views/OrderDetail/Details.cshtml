@@ -1,0 +1,50 @@
+﻿@model Shop.Models.OrderDetail
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantitySale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantitySale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPriceSale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPriceSale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Products.NameProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Products.NameProduct)
+        </dd>
+
+    </dl>
+</div>
+<p>    
+    @Html.ActionLink("Back to List", "Index")
+</p>

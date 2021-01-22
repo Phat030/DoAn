@@ -1,0 +1,26 @@
+﻿@model Shop.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCus.cshtml";
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <img src="@Url.Content(Model.Image)" style="height:400px;width:400px;margin:10px" />
+            </div>
+
+            <div class="col-md-7">
+                <h1>@Html.DisplayFor(model => model.NameProduct)</h1>
+                <p class="price">@Html.DisplayFor(model => model.UnitPrice)</p>
+                <p><b>Avaibility:</b>@Html.DisplayFor(model => model.Available)</p>
+                <p><b>Condition:</b>New</p>
+                <p><b>Brand:</b>@Html.DisplayFor(model => model.Category.NameCate)</p>
+                <p><b>Detail:</b>@Html.DisplayFor(model => model.Descriptions)</p>
+                <a href="/ShoppingCart/AddtoCart/@Model.IDProduct" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+

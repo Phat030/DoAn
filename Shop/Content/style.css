@@ -1,0 +1,24 @@
+﻿.field-validation-error{
+    color:red;
+}
+#form-register {
+    position: center;
+    top: 30%;
+    left: 30%;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+}
+#form-login {
+    position: center;
+    top: 30%;
+    left: 30%;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+}
+table {
+    width: 500px;
+}
+.title-form{
+    text-align:center;
+    font-size:30px; 
+}
